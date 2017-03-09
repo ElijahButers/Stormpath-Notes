@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60F254F0DD0E55604BC3BC3B /* Pods_Stormpath_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 150ED9F48C3477DE9F84F511 /* Pods_Stormpath_Notes.framework */; };
 		DF46C2C51C938CDB0001898D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF46C2C41C938CDB0001898D /* AppDelegate.swift */; };
 		DF46C2CA1C938CDB0001898D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF46C2C81C938CDB0001898D /* Main.storyboard */; };
 		DF46C2CC1C938CDB0001898D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF46C2CB1C938CDB0001898D /* Assets.xcassets */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		150ED9F48C3477DE9F84F511 /* Pods_Stormpath_Notes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stormpath_Notes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		497CA61FF072E4E0A5F0C337 /* Pods-Stormpath Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stormpath Notes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stormpath Notes/Pods-Stormpath Notes.release.xcconfig"; sourceTree = "<group>"; };
 		DF46C2C11C938CDB0001898D /* Stormpath Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stormpath Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF46C2C41C938CDB0001898D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF46C2C91C938CDB0001898D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		DF46C2D61C938DFF0001898D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DF46C2D81C938E0E0001898D /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		DF46C2DA1C938E160001898D /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		DF51551FB1FFBBBD83AC547E /* Pods-Stormpath Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stormpath Notes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stormpath Notes/Pods-Stormpath Notes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60F254F0DD0E55604BC3BC3B /* Pods_Stormpath_Notes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7DB360CA5E9FAD9CFA364654 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF51551FB1FFBBBD83AC547E /* Pods-Stormpath Notes.debug.xcconfig */,
+				497CA61FF072E4E0A5F0C337 /* Pods-Stormpath Notes.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C08ACE34B7EC41DFC284CA1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				150ED9F48C3477DE9F84F511 /* Pods_Stormpath_Notes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DF46C2B81C938CDB0001898D = {
 			isa = PBXGroup;
 			children = (
 				DF46C2C31C938CDB0001898D /* Stormpath Notes */,
 				DF46C2C21C938CDB0001898D /* Products */,
+				7DB360CA5E9FAD9CFA364654 /* Pods */,
+				C08ACE34B7EC41DFC284CA1B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DF46C2D31C938CDB0001898D /* Build configuration list for PBXNativeTarget "Stormpath Notes" */;
 			buildPhases = (
+				CF2B855525CD5312D4303363 /* [CP] Check Pods Manifest.lock */,
 				DF46C2BD1C938CDB0001898D /* Sources */,
 				DF46C2BE1C938CDB0001898D /* Frameworks */,
 				DF46C2BF1C938CDB0001898D /* Resources */,
+				96ED6DDC8EE79187F7A7B21C /* [CP] Embed Pods Frameworks */,
+				3E7DEC48CA9CFC0F7057B43C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,6 +164,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E7DEC48CA9CFC0F7057B43C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stormpath Notes/Pods-Stormpath Notes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96ED6DDC8EE79187F7A7B21C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stormpath Notes/Pods-Stormpath Notes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF2B855525CD5312D4303363 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DF46C2BD1C938CDB0001898D /* Sources */ = {
@@ -257,6 +332,7 @@
 		};
 		DF46C2D41C938CDB0001898D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF51551FB1FFBBBD83AC547E /* Pods-Stormpath Notes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -271,6 +347,7 @@
 		};
 		DF46C2D51C938CDB0001898D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 497CA61FF072E4E0A5F0C337 /* Pods-Stormpath Notes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
