@@ -28,8 +28,21 @@ class NotesViewController: UIViewController {
                 self.helloLabel.text = "Hello \(account.fullName)!"
             }
         }
-    }
-    
+        
+        let notesEndpoint = URL(string: "https://stormpathnotes.herokuapp.com/notes")!
+        var request = URLRequest(url: notesEndpoint)
+        request.setValue("Bearer \(Stormpath.sharedSession.accessToken ?? "")", forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
+            guard let data = data, let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [String: Any], let notes = json["notes"] as? String else {
+                return
+        }
+            DispatchQueue.main.async(execute: {
+                self.notesTextView.text = notes
+            })
+    })
+        task.resume()
+}
+
     @IBAction func logout(_ sender: AnyObject) {
         // Code when someone presses the logout button
         dismiss(animated: false, completion: nil)
