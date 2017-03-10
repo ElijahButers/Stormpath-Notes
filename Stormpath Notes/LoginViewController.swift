@@ -33,7 +33,13 @@ class LoginViewController: UIViewController {
 
     @IBAction func resetPassword(_ sender: AnyObject) {
         // Code when someone presses the reset password button
-        
+        Stormpath.sharedSession.resetPassword(emailTextField.text!) { (success, error) -> Void in
+            if let error = error {
+                self.showAlert(withTitle: "Error", message: error.localizedDescription)
+            } else {
+                self.showAlert(withTitle: "Sucess", message: "Password reset email sent!")
+            }
+        }
     }
     
     func openNotes(success: Bool, error: NSError?) {
