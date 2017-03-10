@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stormpath
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
