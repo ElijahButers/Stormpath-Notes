@@ -29,8 +29,16 @@ class RegisterViewController: UIViewController {
         let newUser = RegistrationModel(email: emailTextField.text!, password: passwordTextField.text!)
         newUser.givenName = firstNameTextField.text!
         newUser.surname = lastNameTextField.text!
+        
+        //Register the new user
+        Stormpath.sharedSession.register(newUser) { (account, error) -> Void in
+            if let error = error {
+                self.showAlert(withTitle: "Error", message: error.localizedDescription)
+            } else {
+                self.exit()
+            }
+        }
     }
-
 }
 
 private extension Selector {
