@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stormpath
 
 class RegisterViewController: UIViewController {
     @IBOutlet weak var firstNameTextField: UITextField!
