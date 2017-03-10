@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stormpath
 
 class NotesViewController: UIViewController {
     @IBOutlet weak var helloLabel: UILabel!
