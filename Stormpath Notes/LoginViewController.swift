@@ -16,7 +16,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(_ sender: AnyObject) {
         // Code when someone presses the login button
-        openNotes()
+        
+        Stormpath.sharedSession.login(emailTextField.text!, password: passwordTextField.text!, completionHandler: openNotes)
         
     }
     
