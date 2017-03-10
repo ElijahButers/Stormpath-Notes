@@ -36,8 +36,13 @@ class LoginViewController: UIViewController {
         
     }
     
-    func openNotes() {
-        performSegue(withIdentifier: "login", sender: self)
+    func openNotes(success: Bool, error: NSError?) {
+        
+        if let error = error {
+            showAlert(withTitle: "Error", message: error.localizedDescription)
+        } else {
+            performSegue(withIdentifier: "login", sender: self)
+        }
     }
 }
 
