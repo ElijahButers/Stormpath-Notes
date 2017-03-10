@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stormpath
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
