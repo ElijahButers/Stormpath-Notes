@@ -23,6 +23,11 @@ class NotesViewController: UIViewController {
         super.viewWillAppear(animated)
         // Place code to load data here
         
+        Stormpath.sharedSession.me { (account, error) -> Void in
+            if let account = account {
+                self.helloLabel.text = "Hello \(account.fullName)!"
+            }
+        }
     }
     
     @IBAction func logout(_ sender: AnyObject) {
