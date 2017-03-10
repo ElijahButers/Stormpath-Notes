@@ -26,6 +26,9 @@ class RegisterViewController: UIViewController {
     @IBAction func register(_ sender: AnyObject) {
         // Code for registering the user
         
+        let newUser = RegistrationModel(email: emailTextField.text!, password: passwordTextField.text!)
+        newUser.givenName = firstNameTextField.text!
+        newUser.surname = lastNameTextField.text!
     }
 
 }
