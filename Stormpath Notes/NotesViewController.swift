@@ -45,6 +45,8 @@ class NotesViewController: UIViewController {
 
     @IBAction func logout(_ sender: AnyObject) {
         // Code when someone presses the logout button
+        
+        Stormpath.sharedSession.logout()
         dismiss(animated: false, completion: nil)
         
     }
