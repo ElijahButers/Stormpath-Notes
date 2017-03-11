@@ -79,6 +79,17 @@ extension NotesViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         // Code when someone exits out of the text field
         
+        let postBody = ["notes": notesTextView.text]
+        
+        let notesEndpoint = URL(string: "https://stormpathnotes.herokuapp.com/notes")!
+        var request = URLRequest(url: notesEndpoint)
+        request.httpMethod = "POST"
+        request.httpBody = try? JSONSerialization.data(withJSONObject: postBody, options: [])
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(Stormpath.sharedSession.accessToken ?? "")", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request)
+        task.resume()
     }
 }
 
