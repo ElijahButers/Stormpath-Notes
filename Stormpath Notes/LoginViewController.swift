@@ -24,11 +24,13 @@ class LoginViewController: UIViewController {
     @IBAction func loginWithFacebook(_ sender: AnyObject) {
         // Code when someone presses the login with Facebook button
         
+        Stormpath.sharedSession.login(socialProvider: .google, completionHandler: openNotes)
     }
     
     @IBAction func loginWithGoogle(_ sender: AnyObject) {
         // Code when someone presses the login with Google button
         
+        Stormpath.sharedSession.login(socialProvider: .facebook, completionHandler: openNotes)
     }
 
     @IBAction func resetPassword(_ sender: AnyObject) {
